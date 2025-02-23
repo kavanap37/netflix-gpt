@@ -9,6 +9,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { addUser } from '../utils/userSlice';
+
 
 const Login = () => {
   const [isSignInForm, setIsSignInForm] = useState(true);
@@ -17,6 +20,7 @@ const Login = () => {
   const password = useRef(null);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
+  const dispatch=useDispatch();
   const toggleSignInForm = () => {
       setIsSignInForm(!isSignInForm);
   };
@@ -42,6 +46,15 @@ const Login = () => {
             photoURL: "https://avatars.githubusercontent.com/u/88972671?s=400&u=aab8fcba43760db68d9ce2b4c8e909eec92bcd11&v=4",
           })
             .then(() => {
+              const { uid, email, displayName, photoURL } = auth.currentUser;
+                     dispatch(
+                       addUser({
+                         uid: uid,
+                         email: email,
+                         displayName: displayName,
+                         photoURL: photoURL,
+                       })     
+                     ); 
               navigate("/browse");
             })
             .catch((error) => {
