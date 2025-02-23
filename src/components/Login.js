@@ -34,9 +34,19 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          // const user = userCredential.user;
+          const user = userCredential.user;
           // console.log(user);
-          navigate("/browse");
+          // navigate("/browse");
+          updateProfile(user, {
+            displayName: name.current.value,
+            photoURL: "https://avatars.githubusercontent.com/u/88972671?s=400&u=aab8fcba43760db68d9ce2b4c8e909eec92bcd11&v=4",
+          })
+            .then(() => {
+              navigate("/browse");
+            })
+            .catch((error) => {
+              setErrorMessage(error.message);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
