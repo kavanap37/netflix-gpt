@@ -5,3 +5,5 @@
 5. useRef
 6. Form validation:
    - regex
+7. Authentication: Firebase
+8. Deploy: Firebase
