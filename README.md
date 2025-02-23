@@ -9,3 +9,9 @@
    - Manage Users, Password Authentication: Firebase documentation => Modular API
    - Add auth in firebase.js and use it by importing
 8. Deploy: Firebase
+9. Redux store: Store user info
+   -create appStore
+   -create slice(export slice and actions) and add to app store
+   -provide store in App.js
+   -Action dispatch through firebase onAuthStateChanged()- Added in root level(Body)
+10. useNavigate() hook- to navigate to different page
