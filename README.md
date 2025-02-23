@@ -17,3 +17,4 @@
 10. useNavigate() hook- to navigate to different page
 11. Signout: dispatch action is handled by onAuthStateChanged()
 12. User name: updateUserInfo()-> Manage User
+13. UseSelector()
