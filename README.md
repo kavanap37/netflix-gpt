@@ -21,3 +21,6 @@
 14. Moving useEffect() which refersh login user info to Header component. WHY? As Body component is a router parent and will not allow navigate to different routes, which is mainly should be done when user login or signup. REMOVE navigation from Login component.
 15. Fix redirection of page through URL , when sign out.(Route restriction: Through navigate in authenticate function(onAuthChanged(), bcz everytime when login or logout this function will be called(as Header will be reload everytime) and navigate() in there will be called regardless of URL change))
 16. Unsubsribing to onAuthChanged() callback(acts as eventlistener) when unmount Header. Handled through firebase unsubsribe return function
+17. Constants file
+18. Wrong Photo URL: no need to wrap PHOTO_URL in {}
+19. name.current.value not working in Login component. REASON: due to slight differences in component rendering timing or user interaction,if there’s any delay or re-render between the time the user fills in the input and when Firebase’s async chain reads that value, it might end up null if the input unmounts or if the ref is reset. SOLUTION: const variable storage before async function call.
