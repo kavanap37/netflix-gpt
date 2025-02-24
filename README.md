@@ -27,3 +27,4 @@
 20. TMDB. WHY not netflix api? As API structure can be changed frequently.
 21. Render happens twice because of StrictMode, this happens only in development phase not in production build
 22. Movie data to redux store
+23. Custom Hooks
