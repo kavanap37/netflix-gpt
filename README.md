@@ -26,3 +26,4 @@
 19. name.current.value not working in Login component. REASON: due to slight differences in component rendering timing or user interaction,if there’s any delay or re-render between the time the user fills in the input and when Firebase’s async chain reads that value, it might end up null if the input unmounts or if the ref is reset. SOLUTION: const variable storage before async function call.
 20. TMDB. WHY not netflix api? As API structure can be changed frequently.
 21. Render happens twice because of StrictMode, this happens only in development phase not in production build
+22. Movie data to redux store
