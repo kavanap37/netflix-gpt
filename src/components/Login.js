@@ -11,6 +11,7 @@ import {
 // import { useNavigate } from "react-router-dom";
 import { useDispatch } from 'react-redux';
 import { addUser } from '../utils/userSlice';
+import { BG_URL, USER_AVATAR } from '../utils/Constants';
 
 
 const Login = () => {
@@ -32,38 +33,48 @@ const Login = () => {
     if (message) return;
     if (!isSignInForm) {
       // Signup Logic
+      // console.log(isSignInForm);
+      const nameValue=name.current.value; //name.current.value was turning null after createUserWithEmailAndPassword() call
+      // console.log(nameValue);
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
-        password.current.value
+        password.current.value,
+        
       )
         .then((userCredential) => {
+          // console.log(userCredential);
           const user = userCredential.user;
+          // console.log("BEFORE USER UPDATE");
           // console.log(user);
-          // navigate("/browse");
+          // console.log(USER_AVATAR);
+          // console.log("name: "+ name);
+          
           updateProfile(user, {
-            displayName: name.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/88972671?s=400&u=aab8fcba43760db68d9ce2b4c8e909eec92bcd11&v=4",
+            displayName: nameValue,
+            photoURL: USER_AVATAR,
           })
             .then(() => {
+              // console.log("UPDATE PROFILE"+ auth.currentUser);
               const { uid, email, displayName, photoURL } = auth.currentUser;
-                     dispatch(
-                       addUser({
-                         uid: uid,
-                         email: email,
-                         displayName: displayName,
-                         photoURL: photoURL,
-                       })     
-                     ); 
-              // navigate("/browse");
+              dispatch(
+                addUser({
+                  uid: uid,
+                  email: email,
+                  displayName: displayName,
+                  photoURL: photoURL,
+                })
+              );
             })
             .catch((error) => {
+              // console.log("UPDATE_PROFILE"+error.message);
               setErrorMessage(error.message);
             });
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessage = error.message;
+          // console.log("AFTER_UPDATE_PROFILE"+error.message);
           setErrorMessage(errorCode + "-" + errorMessage);
         });
     }
@@ -93,7 +104,7 @@ const Login = () => {
      <Header/>
      <div className="absolute">
         <img 
-        src="https://assets.nflxext.com/ffe/siteui/vlv3/0cf2c109-3af1-4a9d-87d7-aecfac5fe881/web/IN-en-20250217-TRIFECTA-perspective_c3376e06-9aff-4657-aafb-91256a597b7c_large.jpg" 
+        src={BG_URL}
         // srcset="https://assets.nflxext.com/ffe/siteui/vlv3/0cf2c109-3af1-4a9d-87d7-aecfac5fe881/web/IN-en-20250217-TRIFECTA-perspective_c3376e06-9aff-4657-aafb-91256a597b7c_large.jpg 2000w, https://assets.nflxext.com/ffe/siteui/vlv3/0cf2c109-3af1-4a9d-87d7-aecfac5fe881/web/IN-en-20250217-TRIFECTA-perspective_c3376e06-9aff-4657-aafb-91256a597b7c_medium.jpg 1279w, https://assets.nflxext.com/ffe/siteui/vlv3/0cf2c109-3af1-4a9d-87d7-aecfac5fe881/web/IN-en-20250217-TRIFECTA-perspective_c3376e06-9aff-4657-aafb-91256a597b7c_small.jpg 959w" 
         alt="logo" ></img>
     </div>
