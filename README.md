@@ -18,3 +18,6 @@
 11. Signout: dispatch action is handled by onAuthStateChanged()
 12. User name: updateUserInfo()-> Manage User
 13. UseSelector()
+14. Moving useEffect() which refersh login user info to Header component. WHY? As Body component is a router parent and will not allow navigate to different routes, which is mainly should be done when user login or signup. REMOVE navigation from Login component.
+15. Fix redirection of page through URL , when sign out.(Route restriction: Through navigate in authenticate function(onAuthChanged(), bcz everytime when login or logout this function will be called(as Header will be reload everytime) and navigate() in there will be called regardless of URL change))
+16. Unsubsribing to onAuthChanged() callback(acts as eventlistener) when unmount Header. Handled through firebase unsubsribe return function
