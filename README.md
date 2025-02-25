@@ -40,3 +40,9 @@
 25. iframe error: JSX Attributes will be in camelcase
 26. aspect-video css
 27. MovieList, MovieCard
+28. Other custom hooks: popular, trending
+
+- Add reducer in movieSlice and export
+- Create custom hook and call API, store it in state using reducer
+- Call customHook in component Browse
+- Update component SecondaryContainer
