@@ -28,3 +28,14 @@
 21. Render happens twice because of StrictMode, this happens only in development phase not in production build
 22. Movie data to redux store
 23. Custom Hooks
+24. Browse page planning:
+
+- MainContainer
+  - VideoBackground
+  - VideoTitle
+- SecondaryContainer
+  - MovieList \* n
+    - cards \* n
+
+25. iframe error: JSX Attributes will be in camelcase
+26. aspect-video css
