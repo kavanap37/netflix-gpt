@@ -39,3 +39,4 @@
 
 25. iframe error: JSX Attributes will be in camelcase
 26. aspect-video css
+27. MovieList, MovieCard
