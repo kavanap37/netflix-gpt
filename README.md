@@ -46,3 +46,5 @@
 - Create custom hook and call API, store it in state using reducer
 - Call customHook in component Browse
 - Update component SecondaryContainer
+
+29. GPTSearch component and GPT slice
