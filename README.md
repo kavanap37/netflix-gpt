@@ -48,3 +48,4 @@
 - Update component SecondaryContainer
 
 29. GPTSearch component and GPT slice
+30. GPTSearch components: SearchBar, Suggestions
