@@ -49,3 +49,4 @@
 
 29. GPTSearch component and GPT slice
 30. GPTSearch components: SearchBar, Suggestions
+31. Language translation in GPTSearch component through constant file
