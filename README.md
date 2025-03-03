@@ -50,3 +50,5 @@
 29. GPTSearch component and GPT slice
 30. GPTSearch components: SearchBar, Suggestions
 31. Language translation in GPTSearch component through constant file
+32. Open AI integration
+33. Get data from TMDB for suggested Open AI movies
