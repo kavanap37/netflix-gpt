@@ -52,3 +52,6 @@
 31. Language translation in GPTSearch component through constant file
 32. Open AI integration
 33. Get data from TMDB for suggested Open AI movies
+34. .env file: Add REACT_APP before variable
+35. Memoization
+36. Responsive UI: By default tailwind classes will be for phome , specify md(medium devices) for desktop
