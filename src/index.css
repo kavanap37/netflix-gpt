@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+.loginscreen-bg {
+    background-image: url("../public/Body_Bg_Login.jpg"); /* Reference image from the public folder */
+    background-size: cover; /* Cover the whole screen */
+    background-position: center; /* Center the background */
+    background-repeat: no-repeat; /* Prevent background from repeating */
+    height: 100vh; /* Full screen height */
+    width: 100vw; /* Full screen width */
+    overflow-y: scroll; /* Enables vertical scrolling */
+    overflow-x: hidden; /* Prevents horizontal scrolling */
+  }
+  .content-container {
+    flex: 1; /* Allows the content to take up all available space */
+    overflow-y: auto; /* Enables scrolling for the content only */
+  }
+  /* Hide scrollbar for Webkit-based browsers (Chrome, Safari) */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.scrollbar-hide {
+  scrollbar-width: none;
+}
